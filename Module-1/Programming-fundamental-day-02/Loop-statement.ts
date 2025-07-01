@@ -98,3 +98,4 @@ do{
   glassLevel++
 } while (glassLevel < fullLevel)
   console.log ("Gelas sudah penuh")
+  console.log ("updated")
