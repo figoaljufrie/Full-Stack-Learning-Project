@@ -94,6 +94,7 @@ function finishProcess(carName: string) {
   // })
 
 // PROMISE -> Untuk menghandle kejadian sukses / gagal.
+//CASE 1: Undian berhadiah.
 interface Lottery {
   status: string,
   message: string
@@ -120,18 +121,99 @@ function lotteryDraw(): Promise<Lottery> {
 
 }
 
-lotteryDraw ()
-.then ((response) => {
-  console.log (response)
-})
-.catch((error) => {
-  console.log (error)
-})
-.finally (()=> {
-  setTimeout (() =>{
-    console.log ("Undian telah berakhir!")
-  }, 500) 
-    
+// lotteryDraw ()
+// .then ((response) => {
+//   console.log (response)
+// })
+// .catch((error) => {
+//   console.log (error)
+// })
+// .finally (()=> {
+//   setTimeout (() =>{
+//     console.log ("Undian telah berakhir!")
+//   }, 500)  
+// })
+
+//Case 2: Pembayaran Tagihan Online.
+
+function payBill(amount: number): Promise<string> {
+  return new Promise ((resolve, reject) => {
+    console.log (`Memproses pembayaran sebesar Rp.${amount}...`)
+    setTimeout(() => {
+      if (amount >= 100000) {
+        console.log ("Pembayaran berhasil!")
+      } else {
+        console.log ("Pembayaran gagal, Saldo tidak cukup.")
+      }
+    }, 4000)
+  })
+}
+
+// payBill (90000)
+//   .then((response) => { //Resolve pasangannya .then
+//     console.log (response)
+//   })
+//   .catch((error) => { //Reject pasangannya .catch
+//     console.log (error)
+//   })
+
+/* -- ASYNC AWAIT -> memprioritaskan fungsi yang terdapat promise.
+Perbedaan antara ASYNC & ASYNC AWAIT:
+1. Tanpa ASYNC AWAIT:*/
+
+function enrollCourse (course: string): Promise <string> {
+  let courseList: string [] = ["Typescript", "PHP", "Phyton"]  
+  return new Promise ((resolve, reject) => {
+    setTimeout(() => {
+      if (courseList.includes(course)) {
+      resolve(`Berhasil mendaftar kursus: ${course}`) 
+    } else {
+      reject ("Kurus tidak tersedia")
+    }
+    }, 2500)
+  })
+}
+
+// enrollCourse ("Typescript")
+//   .then((response) => {
+//     console.log (response)
+//   })
+
+//2. DENGAN ASYNC AWAIT:
+
+async function enrollCourseAsync (course: string) {
+  try {
+  const result = await enrollCourse (course)
+  console.log(result) }
+  catch (error) {
+    console.log (error)
+  } finally {
+    ("Done...")
+  }
+  setTimeout (() => {
+    console.log ("Done...")
+  }, 1000)
+}
+
+// enrollCourseAsync("Typescript")
+
+//-- THROW ERROR -> Melempar error lagnsung sebelum masuk catch
+function validateAge(age: number ) {
+  if (age < 18) {
+    throw new Error ("Usia minimal adalah 18 tahun!")
+  } 
+  console.log ("pendaftaran berhasil")
   
-  
-})
+}
+
+async function confirmation() {
+  try {
+    const result = await validateAge(17)
+    console.log (result)
+  } catch (error) {
+    console.log ("Gagal", (error as Error).message)
+  }
+}
+confirmation()
+
+console.log ('hello')

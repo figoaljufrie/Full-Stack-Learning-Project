@@ -246,13 +246,13 @@ i++;
 //-- DO-WHILE LOOP:
 /* Do while loop is similiar to while loops. The only difference is that it only starts checking the condition after the first code block execution. */
 
-let i: number = 5;
+/*let i: number = 5;
 
 while (i < 5) {
   console.log ('hello!');
 } do {
   console.log ('hi');
-} while (i < 5);
+} while (i < 5);*/
 
 /* The while loop will not be executed since the condition is checked before the code block execution, and the condition itself results in a false value.
 
@@ -289,27 +289,154 @@ for (let i = 0; i < 5; i++) {
 
 // Exercise 1: Write a code to check whether the number is odd / even
 
-let checkNum: number = 100;
+/*let checkNum: number = 100;
 let eveN: number = 0;
 
 if (checkNum % 2 === 0)  {
   console.log ('Even Number')
 } else {
   console.log ('Odd Number')
-}
+}*/
+
+// ------------------------------------------
 
 // Exercise 2: Write a code to check whether the number is prime or not.
 
-let primeNum: number = 7;
-for (i = 0; i > primeNum; i++) {
-  if (num % i === 0) {
-    console.log ("It's a prime number")
+/* PSEUDOCODE:
+1. Write a variable to contain the number we want to check whether it's prime or not.
+2. Create a boolean variable to confirmed whether the number is prime or not.
+3. Do a for loop, let i = 2, i < primeNum (2); i++ 
+4. Write an if-statement, if 8 % i (2) === 0 (No remainder)
+5. Then, the isPrime change go false boolean. We give break; so that the code will be skipped.
+6. Give a printed console.log if (isPrime), the first IsPrime (true) then it is a prime number.
+7. else, not a prime number
+
+NOTES: The reason why it's using a FOR LOOP STATEMENT, IS SO THAT the primeNum (8), can be each divided by the number 2, and then the next looping number (3), and again, and again.
+
+If it can be divided by number other than 0 and itself, than it's not a prime number.
+
+*/
+
+/*let primeNum: number = 8;
+let isPrime: boolean = true;
+for (let i = 2; i < primeNum; i++) {
+  if (primeNum % i === 0) {
+    isPrime = false;
+    break;
   }
 }
 
+if (isPrime) {
+  console.log ("Prime Number")
+} else {
+  console.log ("Not a Prime Number")
+}*/
 
-// Exercise 3:
+// ------------------------------------------
 
-// Exercise 4:
+// Exercise 3: Find the sum of the numbers 1 to N. Example: 3 / 5 (N)
 
-// Exercise 5:
+/* PSEUDOCODE:
+1. Create a variable sum and input 0
+2. Create a variable N as the number we want to target for the factorial
+3. Create a variable i to be the starting point, from (1).
+4. Create string variable to be the (+) button in the printed.
+5. Use while-loop that if i <= (less than N), sum = suM (0) + i (it will loop until sum is N)
+6. exprs += i (to get the string to do loop also) i think so.
+7. if statement of (i < (less than) n) the string express will loop the (+) button, but don't use <= (less than or equal) so that the exprs don't loop on the last number.
+8. i++ is runned for the looping.
+9. Console.log exprs (to print the + sign) and suM to pring the number.*/
+
+
+/*let suM: number = 0
+let n: number = 5
+let i: number = 1
+let exprs: string = ""
+
+while (i <= n) {
+  suM = suM+i
+  exprs += i //exprs will print the result loop of i, so the first loop will be 1. Changing the valur i from number to string, thanks to type coercion
+  if (i < n) {
+    exprs += " + " // And, exprs will also print the + symbol, as long as the i is less than n
+  }
+  
+  i++
+}
+
+console.log (`${exprs} = ${suM}`)*/
+
+// ------------------------------------------
+
+/* Exercise 4:
+ Write a code to find factorial of a number
+PSEUDOCODE:
+1. Create a variable a = 6 (number we want to factor)
+2. Create a variable u = 1 (giving the boundaries for a so that it did not reduce to - infinity)
+3. Create a variable result to multiply result with every number in a while looping (6, 5, 4, etc)
+4. The variable result is 1 multiply 6 in the first loop, so the equal is 6.
+5. On the next loop, result will become 6, and so it becomes 6 * 5. 
+6. On the next loop, result is 6*5 = 30 and multiply it with the next loop in a, which is 4
+7. do a-- so that the number a decrease until the number u = 1
+8. give an expression variable to make it complete in the printed version. So it printed the process.
+
+--PREVIOUS CONFUSION--
+I still don't get why result * a? doesn't it mean that result (1) * (multiply) a (6 / 5 / 4 / etc until one?) But 1 times 6 is 6, and 1 times 5 is 5?
+ */
+
+
+
+ /*let a: number = 6
+ let u: number = 1
+ let result: number = 1
+ let express: string = ""
+
+ while (a >= u) {
+  result = result * a
+  express += a
+  if (a > u) {
+    express += " x "
+  }
+ a--
+}
+ 
+ console.log (`${express} = ${result}`)*/
+
+/* Exercise 5: Fibonacci number: sample = 15
+PSEUDOCODE:
+1. Create a variable n to determine which number we want to find the fibonacci.
+2. create a variable a as the starting point
+3. create a variable b for putting the next number in the loop
+4. create a variable i as starting point for the loop
+5. Use while statement to count while i <= (less than) n (15)
+6. after the first loop, stored the number in the next variable.
+after it, the loop will go a (previous number = b, b (current number = next))
+
+Actually i still don't get why we use i <= n in the while, why don't we use b? is it because the number inside b will be constantly updated?
+
+and, if let next = a + b, and a = b, isnt the number a & b the same? and b = next denies the next value? which is a + b?
+
+SO AFTER THE CONFUSION:
+let next: number = a + b
+a = b 
+b = next
+this is the first loop, the second loop is:
+next = a (the old b) + b (the old next)
+a = b (the old next)
+b = next (the new next)
+and the loop will go on-on until it reaches the number N
+
+
+let n: number = 15
+let a : number = 0
+let b: number = 1
+let i: number = 1
+
+while (i <= n){
+  console.log (a)
+let next : number = a + b
+  a = b 
+  b = next
+i++
+}
+console.log (a)
+*/
