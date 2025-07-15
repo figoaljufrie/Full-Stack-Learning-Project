@@ -1,0 +1,208 @@
+.h2 {
+border-bottom: 2px;
+padding-bottom: 5px;
+}
+
+.static-box {
+  position: static;
+  background-color: pink;
+  padding: 24px;
+}
+
+.relative-box {
+  position: relative;
+  background-color: green;
+  padding: 24px;
+}
+
+.absolut-box {
+position: absolute;
+background-color: blueviolet;
+}
+
+.sticky-box {
+  position: sticky;
+  background-color: aqua;
+  padding: 24px;
+}
+
+.fixed-box {
+  position: fixed;
+  background-color: gray;
+  padding: 24px;
+}
+
+/*Media Quaries*/
+
+.responsive-box {
+  background-color: #efefef;
+  padding: 20px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 18px;
+  border: 2px solid #aaa;
+}
+
+/* Desktop: Width >= 1025px */
+@media (min-width: 1025px) {
+  .responsive-box {
+    background-color: #d4edda;
+    color: #155724;
+  }
+}
+
+/* Tablet: width 768px - 1024px*/
+@media (min-width: 768px) and (max-width: 104px) {
+  .responsive-box {
+    background-color: #fff3cd;
+    color: #856404;
+  }
+}
+
+/* Smartphone - Width < 768px */
+@media (max-width: 767px) {
+  .responsive-box {
+    background-color: rgb(128, 182, 237);
+    color: rgb(255, 255, 255);
+  }
+}
+
+/*GRIDDDDD*/
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap:20px;
+  border: 1px solid #ccc;
+  padding: 20px;
+}
+
+.grid-item {
+  background-color: gray;
+  padding: 20px;
+  text-align: center;
+}
+
+.grid-rows {
+  display: grid;
+  grid-template-rows: 100px 50px 150px;
+  grid-gap: 10px;
+}
+
+.grid-cols {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  gap: 10px;
+}
+
+.grid-auto-rows {
+  display: grid;
+  grid-auto-rows: 100px;
+  gap: 10px;
+}
+
+.justify-demo {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  justify-items: center;
+  background-color: #ddd;
+  padding: 20px;
+  border-radius: 1px;
+  border: dashed black;
+}
+
+.justify-start {
+  justify-items: start;
+}
+
+.justify-center {
+  justify-items: center;
+}
+
+.justify-end {
+  justify-items: end;
+}
+
+.justify-stretch {
+  justify-items: stretch;
+  
+  
+}
+/* FLEX CONTAINER */
+
+.flex-container {
+  display: flex;
+  gap: 10px;
+  background-color: #e0e0e0;
+  padding: 20px;
+}
+
+.flex-item {
+  background-color: #ffff;
+  border: 2px solid #999;
+  padding: 20px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.row {
+  flex-direction: row;
+}
+
+.col {
+  flex-direction: column;
+}
+
+.row-rev {
+  flex-direction: row-reverse;
+}
+
+.col-rev {
+  flex-direction: column-reverse;
+}
+
+.no-wrap {
+  flex-wrap: nowrap;
+  width: 100px;
+}
+
+.wrap {
+  flex-wrap: wrap;
+  width: 100px;
+}
+
+.wrap-rev {
+  flex-wrap: wrap-reverse;
+  width: 100px;
+}
+
+/* --- FLEX BASIS --- */
+
+.basis-container {
+  display: flex;
+  gap: 10px;
+  background-color: rgb(172, 234, 172);
+  color: rgb(0, 0, 0);
+  padding: 20px;
+  flex-wrap: wrap;
+}
+
+.basis-item {
+  background-color: #d6eaff;
+  border: 2px solid #4b94c1;
+  padding:20px;
+  text-align: center;
+}
+
+.basis-100{
+  flex-basis: 100px;
+}
+
+.basis-200{
+  flex-basis: 200px;
+}
+
+.basis-300{
+  flex-basis: 300px;
+}

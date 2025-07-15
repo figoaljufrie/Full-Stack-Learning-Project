@@ -1,0 +1,194 @@
+@import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+* {
+  box-sizing: border-box;
+  word-wrap: break-word;
+}
+
+body {
+font-family: 'Figtree';
+margin: 0; 
+background-color: #f4f6f9;
+padding: 1rem;
+color: hsl(0, 0%, 100%);
+
+}
+/*
+- Auto-fit will allows to fit as many column as the screen allows.
+- Make sure that each column is at least 300px, but can grow up to fill available space (1fr)
+*/
+
+.testimonial-grid {
+  display: grid;
+  grid-template-areas: 
+  "daniel daniel jonathan kira"
+  "harmon patrick patrick kira";
+  grid-template-columns: repeat(4, 1fr);
+  gap: 50px;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto; /* Center the grid horizontally */
+  padding: 2rem; /* Add spacing from edges */
+
+}
+
+article {
+  background-color: rgb(148, 31, 31);
+  border-radius: 12px;
+  padding: 15px;
+  box-shadow: 5px 5px 25px rgb(118, 111, 111);
+  transition: all 0.4s ease, box-shadow 0.4s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  transform-origin: center;
+  will-change: transform, box-shadow;
+  cursor: pointer;
+}
+
+.user-daniel, .user-jonathan, .user-kira, .user-harmon, .user-abrams {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 50px;
+}
+
+img {
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+}
+
+h4 {
+  margin: 0;
+  font-size: 13px;
+  font-weight: bold;
+  color: white;
+}
+
+.title-daniel, .title-jonathan, .title-kira, .title-harmon, .title-abrams {
+  margin: 0;
+  font-size: 12px;
+  color: #e0e0e0;
+}
+
+h3 {
+  margin: 0 0 1rem 0;
+  font-size: 20px;
+  line-height: 1.4;
+  color: #f2f2f2;
+  word-wrap: break-word;
+}
+
+.body-daniel, .body-jonathan, .body-kira, .body-harmon, .body-abrams {
+  font-size: 12px;
+  line-height: 1.8;
+  color: white;
+}
+
+.testimonial-daniel {
+  grid-area: daniel;
+  background-color: #733fc8;
+  order: 1;
+}
+
+.testimonial-daniel:hover {
+  box-shadow: 15px 15px 25px #733fc8;
+}
+
+.testimonial-jonathan {
+  grid-area: jonathan;
+  background-color: #3ab3bc;
+  order: 2;
+}
+
+.testimonial-jonathan:hover {
+  box-shadow: 15px 15px 25px #3ab3bc;
+}
+
+.testimonial-kira {
+  grid-area: kira;
+  background-color: #cf65cf;
+  order: 3;
+}
+
+.testimonial-kira:hover {
+  box-shadow: 15px 15px 25px #cf65cf;
+}
+
+.testimonial-harmon {
+  grid-area: harmon;
+  background-color: #7edb6b;
+  order: 4;
+}
+
+.testimonial-harmon:hover {
+  box-shadow: 15px 15px 25px #7edb6b;
+}
+
+.testimonial-patrick {
+  grid-area: patrick;
+  background-color: #19202D;
+  order: 5;
+}
+
+.testimonial-patrick:hover {
+  box-shadow: 15px 15px 25px #19202D;
+}
+
+.testimonial:hover {
+  transform: scale(1.08);
+}
+
+
+.testimonial-kira h3,
+.testimonial-kira h4,
+.testimonial-kira .title-kira,
+.testimonial-kira .body-kira,
+.testimonial-harmon h3,
+.testimonial-harmon h4,
+.testimonial-harmon .title-harmon,
+.testimonial-harmon .body-harmon {
+  color: #333;
+}
+
+@media screen and (max-width: 768px) { 
+  .testimonial-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+      "daniel"
+      "jonathan"
+      "kira"
+      "harmon"
+      "patrick";
+    gap: 2rem;
+    padding: 1rem;
+  }
+  h3 {
+  font-size: 16px;
+  }
+
+  .testimonial-grid article {
+    width: 90%; /* or a fixed width like 320px if you prefer */
+    max-width: 400px;
+    padding: 1.2rem;
+  }
+
+.body-daniel,
+.body-jonathan,
+.body-kira,
+.body-harmon,
+.body-abrams {
+  font-size: 13px;
+}
+.testimonial {
+    grid-area: auto;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+}
