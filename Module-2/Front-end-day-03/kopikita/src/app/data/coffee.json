@@ -1,0 +1,72 @@
+[
+  {
+    "id": 1,
+    "name": "Classic Black",
+    "description": "Strong and bold Indonesian black coffee.",
+    "price": 15000,
+    "image": "/images/classic-black.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Aren Latte",
+    "description": "Espresso with milk and palm sugar.",
+    "price": 18000,
+    "image": "/images/aren-latte.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Kopi Luwak",
+    "description": "Smooth and exclusive wild civet coffee.",
+    "price": 50000,
+    "image": "/images/kopi-luwak.jpg"
+  },
+  {
+    "id": 4,
+    "name": "Gayo Brew",
+    "description": "Organic coffee from Aceh's highlands.",
+    "price": 20000,
+    "image": "/images/gayo-brew.jpg"
+  },
+  {
+    "id": 5,
+    "name": "Toraja Roast",
+    "description": "Earthy and rich coffee from Toraja.",
+    "price": 22000,
+    "image": "/images/toraja-roast.jpg"
+  },
+  {
+    "id": 6,
+    "name": "Kintamani Citrus",
+    "description": "Fruity and citrusy blend from Bali.",
+    "price": 21000,
+    "image": "/images/kintamani-citrus.jpg"
+  },
+  {
+    "id": 7,
+    "name": "Cold Brew",
+    "description": "Chilled brew for refreshing experience.",
+    "price": 19000,
+    "image": "/images/cold-brew.jpg"
+  },
+  {
+    "id": 8,
+    "name": "Affogato",
+    "description": "Espresso over vanilla ice cream.",
+    "price": 25000,
+    "image": "/images/affogato.jpg"
+  },
+  {
+    "id": 9,
+    "name": "Nusantara Cappuccino",
+    "description": "Creamy cappuccino with local flavor.",
+    "price": 23000,
+    "image": "/images/nusantara-cappuccino.jpg"
+  },
+  {
+    "id": 10,
+    "name": "Pandan Latte",
+    "description": "Latte infused with pandan aroma.",
+    "price": 24000,
+    "image": "/images/pandan-latte.jpg"
+  }
+]
