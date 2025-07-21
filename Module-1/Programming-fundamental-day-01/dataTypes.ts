@@ -37,6 +37,11 @@ console.log ("includes 'anjay' :", message.includes('anjay'))
 //5. Slice
 console.log ("slice (3,10) : ", message.slice (3,10))
 
+let message: string = "Hello World"
+console.log ("Slice (2,4): ", message.slice (2,4))
+
+
+
 //6. Replace
 console.log ("Replace 'anjay' with 'mantap' : "+ message.replace ('anjay', 'mantap'))
 //---------------------//

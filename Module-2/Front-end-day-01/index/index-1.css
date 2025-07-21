@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+body {
+  font-family: 'Roboto';
+}
+h2 {
+  color: brown
+}
+.color-1 {
+  color: red
+}
+
+.color-2 {
+  color: green
+}
+
+.color-3 {
+  color: blue
+}
+
+.back-1 {
+  background-color: rgb(234, 103, 145);
+  color: black
+}
+
+.back-2 {
+  background-color: rgb(110, 182, 210);
+  color: black
+}
+
+.back-3 {
+  background-color: rgb(171, 225, 180);
+  color: black
+}
+
+.bg-image-1 {
+  background-image: url('https://i.pinimg.com/736x/c4/d2/b2/c4d2b25d4050b8baefdeea1a37d4005f.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 500px;
+  width: 1000px;
+  color: white;
+}
+
+.bg-image-2 {
+  background-image: url('https://i.pinimg.com/736x/c4/d2/b2/c4d2b25d4050b8baefdeea1a37d4005f.jpg');
+  background-repeat: repeat;
+  background-size: contain;
+  color: white;
+}
+
+.shape-1 {
+  margin-top: 25px;
+  margin-bottom: 25px;
+  margin-left: 25px;
+  margin-right: 25px;
+
+  padding-left: 15px;
+  padding-right: 30px;
+  padding-bottom: 30px;
+  padding-top: 30px;
+  background-color: green;
+  border: 1px;
+}
+
+.shape-1 .sub {
+  
+  background-color: rgb(0, 23, 128);
+  color: white;
+}
+
+.shape-2 {
+  margin-top: 25px;
+  margin-bottom: 25px;
+  margin-left: 25px;
+  margin-right: 25px;
+
+  padding-left: 15px;
+  padding-right: 30px;
+  padding-bottom: 30px;
+  padding-top: 30px;
+  background-color: rgb(238, 126, 145);
+  border: 3px solid green;
+}
+
+.shape-2 .sub {
+  background-color: rgb(88, 189, 125);
+  color: white;
+}
+
+.shape-3 {
+  margin-top: 25px;
+  margin-bottom: 25px;
+  margin-left: 25px;
+  margin-right: 25px;
+
+  padding-left: 15px;
+  padding-right: 30px;
+  padding-bottom: 30px;
+  padding-top: 30px;
+  background-color: rgb(238, 126, 145);
+  border: 3px dotted black;
+}
+
+.shape-3 .sub {
+  background-color: rgb(88, 189, 125);
+  color: white;
+}
+
+.shape-4 {
+  margin-top: 25px;
+  margin-bottom: 25px;
+  margin-left: 25px;
+  margin-right: 25px;
+
+  padding-left: 15px;
+  padding-right: 30px;
+  padding-bottom: 30px;
+  padding-top: 30px;
+  background-color: rgb(238, 126, 145);
+  border: 10px groove black;
+}
+
+.shape-4 .sub {
+  background-color: rgb(88, 189, 125);
+  color: white;
+}
+
+.box {
+  background-color: pink;
+  color: green;
+  border: 5px groove blue;
+}
+.wh-1 {
+  height: 100px;
+  width: 100px;
+}
+
+.wh-2 {
+  height: 50px;
+  width: 50%;
+}
+.wh-3 {
+  height: 10vw;
+  width: 10vh;
+}
+.wh-4 {
+  height: 10rem;
+  width: 5rem;
+}
+.wh-5 {
+  height: auto;
+  width: fit-content;
+  padding: 10px;
+}

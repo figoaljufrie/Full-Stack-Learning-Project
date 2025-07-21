@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang ="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!--META VIEWPORT & CONTENT: Mendeteksi pixels untuk mereponsivekan dengan device yang digunakan. Mendeteksi pixels antar devide agar bisa menyesuaikan-->
+
+<title>JCWD3504 - Register Table</title>
+</head>
+
+<body>
+  <h1> Formulir Registrasi JCWD <br>- Purwadhika </h1>
+  <form method="get">
+    <!-- Nama Lengkap -->
+     <label for="name"> Nama Lengkap: </label>
+     <input type="text" id="name" name="name" required><br><br>
+    
+     <!-- Email -->
+     <label for="email"> Email: </label>
+     <input type="email" id="email" name="email" required><br><br>
+
+     <!-- Pilih Branch -->
+      <label for="kota"> Pilih Kota: </label>
+      <select name="kota" id="kota">
+        <option value="Jakarta"> Jakarta </option>
+        <option value="Jakarta"> BSD </option>
+        <option value="Jakarta"> Bandung </option>
+        </select><br><br>
+
+    <!-- Jenis Kelamin -->
+     <label for="Gender"> Jenis Kelamin: </label><br>
+
+     <input type="radio" id="male" name="gender" value="Laki-Laki" required>
+     <label for="male"> Laki-Laki</label><br>
+
+     <input type="radio" id="female" name="gender" value="Perempuan" required>
+     <label for="Female"> Perempuan</label><br><br>
+     
+     <!-- Upload KTP / Identitas -->
+     <label for="ktp"> Upload Identitas: </label>
+     <input type="file" id="ktp" name="ktp" accept=".jpg,.jpeg,.png,.pdf"required><br><br>
+
+     <!-- Password -->
+     <label for="password"> Password: </label>
+     <input type="password" id="password" name="password" required><br><br>
+
+    <!-- Tombol Submit -->
+    <button type="submit"> Kirim Registrasi </button>
+
+  </form>
+</body>
+</html>

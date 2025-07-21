@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* THe body gives:
+- Resets spacing issues
+- Centers the card vertically and horizontally
+- Gives the chosen background; yellow.
+*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+body {
+  font-family: 'Figtree';
+  background-color: #f4d04e;
+  display: flex;
+  /*Justify-content to: center it*/
+  justify-content: center;
+  /*Align-items to: Make elements on the middle*/
+  align-items: center;
+  /*min-height: to make the content height spacing minimum in a center.*/
+  min-height: 100vh;
+
+  /*Confusion:
+  Why do i need to have:
+  - flex? What is the purpose?
+  - Why do i need to have my align items on the center? when justify-content is already make my element on the center?
+  - Align-items is not working without giving the min-height?
+  */
+
+  /* Answer:
+  - Display: flex make the body a felx container, which means you can align it's children (in-this-case, card-1) more easily.
+  - Justify-content: Aligns horizontally
+  - Align-items: Aligns Vertically
+  - (Align items: center) works along the vertical axis of the container, BUT ONLY IF THE CONTAINER HAS A HEIGHT.
+  - That is why we added min-height, so the body has a full screen height to center against vertically.
+*/
+
+}
+
+.card-1 {
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 20px;
+  box-shadow: 8px 8px 0px black;
+  width: 384px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 21px;
+
+  /* Confusion:
+  - What still confuse me is the way padding works.
+  - So, did you used border-radius to make the rounded edges in the box?
+  - What does flax-direction and gap do?
+  - So, does gap means gap between every elements in the article?
+*/
+
+  /* Answer:
+  - Padding: The space inside the box. Between the content and the border.
+  - Border-radius to make the rounded edges in the box.
+  - (Flex-Direction: column;) Makes all children stack VERTICALLY instead of horizontally.
+  - (Flex-direction: Row) : Children left-to-right
+  - Gap: A space between flex items.
+  It puts spacing between each block inside .card-1, like:
+  - Image
+  - Meta-section
+  - Title
+  - Description
+  - Footer.
+  * It's cleaner than using a margin in every children.
+*/
+
+
+}
+
+.card-1 > img:first-of-type {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+}
+
+.meta {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.tag {
+  background-color: #f4d04e;
+  padding: 4px 12px;
+  border: 1px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: bold;
+  width: fit-content;
+/*Question:
+  - So, padding is to create a distance between the element and the background color?
+  - width is to adjust the length of the background color? the text box?
+  - Honest confusion, if we can adjust the font size and style in the CSS, why do we have to use like h1, h2, or h6? or like the text effect <strong>, <mark>, etc.
+*/
+
+/* Answer:
+  - Padding adds space inside the yellow box. Around the text "Learning".
+  - Width fit-to-content: It makes the yellow shrink to fit the text, instead of stretching full width.
+  - The tags of every sentences in web is important, because:
+  <h1> - <h-6> * It tells screen readers, search engines, and developers.
+  <strong> * Means Important Words, not just tyled that way.
+  <mark> * Means higlighted or relevant to search. 
+
+  So the point:
+  CSS Styles how it looks.
+  HTML Elements say what it is.
+
+*/
+}
+
+.pub-date {
+  font-size: 12px;
+  color: black;
+}
+
+.title {
+  margin: 0px;
+  padding-top: 0px;
+  color: black;
+}
+
+.title:hover{
+  color: #f4d04e;
+  cursor: pointer;
+}
+
+.description {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #6b6b6b;
+}
+
+.author {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: auto;
+}
+
+.author img {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}
+
+.name {
+  font-size: 15px;
+  font-weight: bold;
+}
