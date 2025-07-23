@@ -106,7 +106,7 @@ export default function page() {
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-7 w-full mt-6">
 
         {/* Break, di bawah ini untuk Grid KOLOM 1 */}
-        <div className="bg-rose-400/45 backdrop-blur-md rounded-4xl shadow-md p-4 w-full flex flex-col mt-6 space-y-4 transition-shadow duration-300 hover:shadow-[0_0_25px_5px_rgba(251,113,133,0.5)]">
+        <div className="bg-rose-400/45 backdrop-blur-md rounded-4xl shadow-md p-4 w-full flex flex-col mt-6 space-y-4 transition-shadow duration-300 hover:shadow-lg hover:shadow-rose-400/50">
         <h1 className="text-lg font-bold text-white mb-6">To Do</h1>
 
         {/* Break, di bawah ini untuk membuat sub-grid di center */}
@@ -123,7 +123,7 @@ export default function page() {
         </div>
 
         {/* Break, di bawah ini untuk Grid KOLOM 2 */}
-        <div className="bg-sky-400/45 backdrop-blur-md rounded-4xl shadow-md p-4 w-full flex flex-col mt-6 space-y-4 transition-shadow duration-300 hover:shadow-lg hover:shadow-rose-400/50">
+        <div className="bg-sky-400/45 backdrop-blur-md rounded-4xl shadow-md p-4 w-full flex flex-col mt-6 space-y-4 transition-shadow duration-300 hover:shadow-lg hover:shadow-sky-400/50">
         <h1 className="text-lg font-bold text-white mb-6">On Progress</h1>
 
         {/* Break, di bawah ini untuk membuat sub-grid di center */}
@@ -158,13 +158,13 @@ export default function page() {
         </div>
 
         {/* Break, di bawah ini untuk Grid KOLOM 3 */}
-        <div className="bg-white/30 backdrop-blur-md rounded-4xl shadow-md p-4 w-full flex flex-col mt-6 space-y-4">
+        <div className="bg-white/30 backdrop-blur-md rounded-4xl shadow-md p-4 w-full flex flex-col mt-6 space-y-4 transition-shadow duration-300 hover:shadow-lg hover:shadow-white/50">
         <h1 className="text-lg font-bold text-white mb-6">On Approval</h1>
 
         {/* Break, di bawah ini untuk membuat sub-grid di center */}
 
             {/* Break, di bawah ini untuk sub-grid task 1 */}
-            <div className="bg-black/5 backdrop-blur-md rounded-2xl shadow-md p-4 mb-6 w-full">
+            <div className="bg-black/5 backdrop-blur-md rounded-2xl shadow-md p-4 mb-6 w-full transition-transform duration-300 hover:scale-105">
             <h2 className="text-sm font-bold text-white mb-1">Script for KOL</h2>
             <p className="inline-block bg-lime-300 rounded-xl px-2 py-1 text-xs font-bold text-black">Freelance</p>
             <br></br>
@@ -173,7 +173,7 @@ export default function page() {
             </div>
 
             {/* Break, di bawah ini untuk sub-grid task 2 */}
-            <div className="bg-black/5 backdrop-blur-md rounded-2xl shadow-md p-4 mb-6 w-full">
+            <div className="bg-black/5 backdrop-blur-md rounded-2xl shadow-md p-4 mb-6 w-full transition-transform duration-300 hover:scale-105">
             <h2 className="text-sm font-bold text-white mb-1">Music Event (Audience Report)</h2>
             <p className="inline-block bg-cyan-300 rounded-xl px-2 py-1 text-xs font-bold text-black">Organizer</p>
             <br></br>
@@ -184,13 +184,13 @@ export default function page() {
         </div>
 
         {/* Break, di bawah ini untuk Grid KOLOM 4 */}
-        <div className="bg-emerald-400/45 backdrop-blur-md rounded-4xl shadow-md p-4 w-full flex flex-col mt-6 space-y-4">
+        <div className="bg-emerald-400/45 backdrop-blur-md rounded-4xl shadow-md p-4 w-full flex flex-col mt-6 space-y-4 transition-shadow duration-300 hover:shadow-lg hover:shadow-emerald-400/50">
         <h1 className="text-lg font-bold text-white mb-6">Considered Done</h1>
 
         {/* Break, di bawah ini untuk membuat sub-grid di center */}
 
             {/* Break, di bawah ini untuk sub-grid task 1 */}
-            <div className="bg-black/5 backdrop-blur-md rounded-2xl shadow-md p-4 mb-6 w-full">
+            <div className="bg-black/5 backdrop-blur-md rounded-2xl shadow-md p-4 mb-6 w-full transition-transform duration-300 hover:scale-105">
             <h2 className="text-sm font-bold text-white mb-1">Scheduling Project</h2>
             <p className="inline-block bg-red-300 rounded-xl px-2 py-1 text-xs font-bold text-black">Front-End</p>
             <br></br>
@@ -198,7 +198,7 @@ export default function page() {
             <span className="text-xs font-normal text-white mb-1"> Jul 20, 2025</span>
             </div>
 
-             <div className="bg-black/5 backdrop-blur-md rounded-2xl shadow-md p-4 mb-6 w-full">
+             <div className="bg-black/5 backdrop-blur-md rounded-2xl shadow-md p-4 mb-6 w-full transition-transform duration-300 hover:scale-105">
             <h2 className="text-sm font-bold text-white mb-1">Cycling Content Session</h2>
             <p className="inline-block bg-yellow-200 rounded-xl px-2 py-1 text-xs font-bold text-black">Passion Project</p>
             <br></br>
