@@ -1,7 +1,7 @@
 export interface ContactInfo {
   name: string;
   email: string;
-  socialMedia: string;
+  socialmedia: string;
   phoneNumber: string;
   address: string;
 }

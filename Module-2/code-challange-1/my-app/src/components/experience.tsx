@@ -64,9 +64,9 @@ export default function Experience() {
       <div className="mb-6">
         <button
           onClick={() => setShowForm((prev) => !prev)}
-          className="bg-black text-white px-4 py-2 rounded-lg hover:bg-zinc-800"
+          className="bg-black text-white px-3 py-1 rounded-xl hover:bg-zinc-800"
         >
-          {showForm ? 'Cancel' : 'Add Experience'}
+          {showForm ? 'Cancel' : '+'}
         </button>
       </div>
 

@@ -35,7 +35,7 @@ export default function Contact() {
       <div className="flex flex-col justify-center items-center mt-10 gap-3">
         <p>{contact?.name}</p>
         <p>{contact?.email}</p>
-        <p>{contact?.socialMedia}</p>
+        <p>{contact?.socialmedia}</p>
         <p>{contact?.phoneNumber}</p>
         <p>{contact?.address}</p>
       </div>

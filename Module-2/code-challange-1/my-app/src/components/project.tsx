@@ -1,6 +1,8 @@
 'use client'
 
-import React from 'react'
+import React, { useState } from 'react'
+import { useProjectPhotos } from '@/helpers/useProjectPhotos'
+import { useProjectPhotos2 } from '@/helpers/useProjectPhotos2'
 
 const letters = [
   { char: 'P', style: 'top-[0%] left-[3%] rotate-[340deg]' },
@@ -13,41 +15,132 @@ const letters = [
   { char: 'S', style: 'top-[50%] left-[82%] rotate-[340deg]' },
 ]
 
-const photos = [
-  { style: 'top-[7%] left-[5%]' },
-  { style: 'top-[7%] left-[22%]' },
-  { style: 'top-[7%] left-[39%]' },
-  { style: 'top-[45%] left-[30%]' },
-  { style: 'top-[45%] left-[47%]' },
-  { style: 'top-[45%] left-[64%]' },
-  { style: 'top-[45%] left-[81%]' },
-]
-
 export default function Project() {
+  const [activeIndex, setActiveIndex] = useState<number | null>(null)
+  const [selectedCategory, setSelectedCategory] = useState<'design3d' | 'marcomms'>('design3d')
+
+  const { photos, loading } = useProjectPhotos()
+  const { photos2, loading2 } = useProjectPhotos2()
+
+  const isModalOpen = activeIndex !== null
+
+  const currentPhotos = selectedCategory === 'design3d' ? photos : photos2
+  const showPrev = () => {
+    if (activeIndex !== null && activeIndex > 0) {
+      setActiveIndex(activeIndex - 1)
+    }
+  }
+
+  const showNext = () => {
+    if (activeIndex !== null && activeIndex < currentPhotos.length - 1) {
+      setActiveIndex(activeIndex + 1)
+    }
+  }
+
+  if (loading || loading2) return <p>Loading Photos...</p>
+
   return (
-    <section className="w-full h-[100vh]  relative overflow-hidden">
+    <section className="w-full h-[100vh] relative overflow-hidden">
       {/* Letters */}
       {letters.map((item, idx) => (
-  <span
-    key={idx}
-    className={`absolute text-white text-[18.5vw] font-extrabold z-10 animate-float-bounce 
-      ${item.style}
-    `}
-    style={{ animationDelay: `${idx * 0.4}s` }}
-  >
-    {item.char}
-  </span>
-))}
-
-      {/* Photo blocks */}
-      {photos.map((item, idx) => (
-        <div
-  key={idx}
-  className={`absolute w-55 h-55 bg-white/20 backdrop-blur-md border-white/30 rounded-none flex items-center justify-center text-black font-bold z-10 hidden sm:block ${item.style}`}
->
-  foto
-</div>
+        <span
+          key={idx}
+          className={`absolute text-white text-[18.5vw] font-extrabold z-10 animate-float-bounce ${item.style}`}
+          style={{ animationDelay: `${idx * 0.4}s` }}
+        >
+          {item.char}
+        </span>
       ))}
+
+      {activeIndex !== null && (
+        <div className="fixed inset-0 bg-black/60 backdrop-blur-sm z-40 transition-opacity duration-300"></div>
+      )}
+
+      {/* CATEGORY: 3D DESIGN */}
+      {photos
+        .filter((_, idx) => idx === 0)
+        .map((item, idx) => (
+          <div
+            key={idx}
+            onClick={() => {
+              setSelectedCategory('design3d')
+              setActiveIndex(idx)
+            }}
+            className={`absolute z-20 w-[30vw] h-[12vw] hover:scale-105 transition-all duration-500 ease-in-out bg-white/10 backdrop-blur-md rounded-xl flex items-center justify-center cursor-pointer ${item.style}`}
+          >
+            <img
+              src={item.imageUrl}
+              alt={`project ${idx}`}
+              className="object-cover w-full h-full rounded-xl opacity-35"
+            />
+            <h1 className="absolute text-white text-4xl font-bold text-center pointer-events-none">
+              3D DESIGN
+            </h1>
+          </div>
+        ))}
+
+      {/* CATEGORY: MARCOMMS */}
+      {photos2
+        .filter((_, idx) => idx === 0)
+        .map((item, idx) => (
+          <div
+            key={idx}
+            onClick={() => {
+              setSelectedCategory('marcomms')
+              setActiveIndex(idx)
+            }}
+            className={`absolute top-[50%] left-[40%] z-20 w-[30vw] h-[12vw] hover:scale-105 transition-all duration-500 ease-in-out bg-white/10 backdrop-blur-md rounded-xl flex items-center justify-center cursor-pointer`}
+          >
+            <img
+              src={item.imageUrl2}
+              alt={`MARKETING COMMUNICATIONS ${idx}`}
+              className="object-cover w-full h-full rounded-xl opacity-35"
+            />
+            <h1 className="absolute text-white text-4xl font-bold text-center pointer-events-none">
+              MARCOMMS
+            </h1>
+          </div>
+        ))}
+
+      {/* Modal Viewer */}
+      {isModalOpen && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm">
+          <button
+            onClick={() => setActiveIndex(null)}
+            className="absolute top-4 right-4 text-white text-2xl"
+          >
+            ✕
+          </button>
+
+          {activeIndex > 0 && (
+            <button
+              onClick={showPrev}
+              className="absolute left-4 text-white text-4xl select-none"
+            >
+              ‹
+            </button>
+          )}
+
+          {activeIndex < currentPhotos.length - 1 && (
+            <button
+              onClick={showNext}
+              className="absolute right-4 text-white text-4xl select-none"
+            >
+              ›
+            </button>
+          )}
+
+          <img
+            src={
+              selectedCategory === 'design3d'
+                ? photos[activeIndex].imageUrl
+                : photos2[activeIndex].imageUrl2
+            }
+            alt={`Enlarged project ${activeIndex}`}
+            className="max-w-[90vw] max-h-[90vh] object-contain rounded-xl shadow-lg transition-all duration-300"
+          />
+        </div>
+      )}
     </section>
   )
 }
