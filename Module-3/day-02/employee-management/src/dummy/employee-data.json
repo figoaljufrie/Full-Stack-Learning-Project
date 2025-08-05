@@ -1,0 +1,122 @@
+{"employeeData": [
+  {
+    "id": "MOX-201",
+    "name": "Figo Aljufrie",
+    "division": "Engineering",
+    "role": "Software Engineer"
+  },
+  {
+    "id": "MOX-202",
+    "name": "Jane Doe",
+    "division": "Marketing",
+    "role": "Marketing Specialist"
+  },
+  {
+    "id": "MOX-203",
+    "name": "John Smith",
+    "division": "Sales",
+    "role": "Sales Manager"
+  },
+  {    
+    "id": "MOX-204",
+    "name": "Alice Johnson",
+    "division": "Human Resources",
+    "role": "HR Manager"
+  },
+  {    
+    "id": "MOX-205",
+    "name": "Bob Brown",
+    "division": "Finance",
+    "role": "Financial Analyst"
+  },
+  {    
+    "id": "MOX-206",
+    "name": "Charlie White",
+    "division": "IT Support",
+    "role": "IT Support Specialist"
+  },
+  {    
+    "id": "MOX-207",
+    "name": "Diana Green",
+    "division": "Customer Service",
+    "role": "Customer Service Representative"
+  },
+  {    
+    "id": "MOX-208",
+    "name": "Ethan Blue",
+    "division": "Product Management",
+    "role": "Product Manager"
+  },
+  {
+    "id": "MOX-209",
+    "name": "Fiona Yellow",
+    "division": "Legal",
+    "role": "Legal Counsel"
+  },
+  {
+    "id": "MOX-210",
+    "name": "George Purple",
+    "division": "Operations",
+    "role": "Operations Manager"
+  },
+  {
+    "id": "MOX-211",
+    "name": "Hannah Orange",
+    "division": "Research and Development",
+    "role": "R&D Scientist"
+  },
+  {
+    "id": "MOX-212",
+    "name": "Ian Pink",
+    "division": "Quality Assurance",
+    "role": "QA Engineer"
+  },
+  {
+    "id": "MOX-213",
+    "name": "Jack Gray",
+    "division": "Supply Chain",
+    "role": "Supply Chain Coordinator"
+  },
+  {
+    "id": "MOX-214",
+    "name": "Kathy Brown",
+    "division": "Training and Development",
+    "role": "Training Specialist"
+  },
+  {
+    "id": "MOX-215",
+    "name": "Liam Black",
+    "division": "Public Relations",
+    "role": "PR Specialist"
+  },
+  {
+    "id": "MOX-216",
+    "name": "Mia Silver",
+    "division": "Content Creation",
+    "role": "Content Writer"
+  },
+  {
+    "id": "MOX-217",
+    "name": "Noah Gold",
+    "division": "Data Analysis",
+    "role": "Data Analyst"
+  },
+  {
+    "id": "MOX-218",
+    "name": "Olivia Teal",
+    "division": "Graphic Design",
+    "role": "Graphic Designer"
+  },
+  {
+    "id": "MOX-219",
+    "name": "Paul Maroon",
+    "division": "Web Development",
+    "role": "Web Developer"
+  },
+  {
+    "id": "MOX-220",
+    "name": "Quinn Cyan",
+    "division": "Event Management",
+    "role": "Event Coordinator"
+  }
+]}
