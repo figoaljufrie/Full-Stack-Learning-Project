@@ -6,4 +6,6 @@ export interface EmployeeDTO {
   name: string;
   division: string;
   role: string;
+  salary: string;
+  payroll_history?: {date: Date, amount: number} []
 }

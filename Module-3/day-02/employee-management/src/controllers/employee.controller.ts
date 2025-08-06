@@ -69,4 +69,38 @@ export class EmployeeController {
     // return;
   } 
  }
+
+ public async create (req: Request, res: Response): Promise <void> {
+  try {
+    const { name, division, role, salary } = req.body;
+    const result = await this.employeeService.create({ name, division, role, salary });
+    handleSuccess(res, result, 'Successfully created employee');
+    
+    
+  } catch (error) {
+    errorHandler(res, error);
+    
+  }
+ }
+
+ public async remove (req: Request, res: Response): Promise <void> {
+  try {
+    const { id } = req.params
+    const result = await this.employeeService.remove(id)
+    handleSuccess(res, {}, 'Employee Deleted Successfully.');
+    
+  } catch (error) {
+   errorHandler(res, error) 
+  }
+ }
+
+ public async transferPayroll (req: Request, res: Response): Promise<void> {
+  try {
+    const result = this.employeeService.transferPayroll();
+    handleSuccess(res, result, result.message);
+  } catch (error) {
+    errorHandler(res, error)
+  }
+ }
+
 }
