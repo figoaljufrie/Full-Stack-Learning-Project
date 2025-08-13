@@ -1,0 +1,32 @@
+{ "dataUser": [
+  {
+    "id": 101,
+    "name": "Alice Johnson",
+    "division": "Engineering",
+    "role": "Fullstack Developer"
+  },
+  {
+    "id": 102,
+    "name": "Bob Smith",
+    "division": "Marketing",
+    "role": "SEO Specialist"
+  },
+  {
+    "id": 103,
+    "name": "Charlie Brown",
+    "division": "Sales",
+    "role": "Sales Manager"
+  },
+  {
+    "id": 104,
+    "name": "Diana Prince",
+    "division": "Human Resources",
+    "role": "HR Manager"
+  },
+  {
+    "id": 105,
+    "name": "Ethan Hunt",
+    "division": "Operations",
+    "role": "Operations Coordinator"
+  }
+]}

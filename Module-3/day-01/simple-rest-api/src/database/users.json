@@ -1,0 +1,19 @@
+{
+  "data" : [
+    {
+      "id": "1",
+      "name": "Alice Johnson",
+      "department": ""
+} ,
+    {
+      "id": "2",
+      "name": "Bob Smith",
+      "department": "Engineering"
+    },
+    {
+      "id": "3",
+      "name": "Charlie Brown",
+      "department": "Marketing"
+    }
+  ]
+}

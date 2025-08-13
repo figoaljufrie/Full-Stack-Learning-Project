@@ -1,0 +1,163 @@
+{"employeeData": [
+  {
+    "id": "MOX-201",
+    "name": "Figo Aljufrie",
+    "division": "Engineering",
+    "role": "Software Engineer",
+    "salary": "20.000",
+    "payroll_history": []
+  },
+  {
+    "id": "MOX-202",
+    "name": "Jane Doe",
+    "division": "Marketing",
+    "role": "Marketing Specialist",
+    "salary": "25.000",
+    "payroll_history": []
+  },
+  {
+    "id": "MOX-203",
+    "name": "John Smith",
+    "division": "Sales",
+    "role": "Sales Manager",
+    "salary": "30.000",
+    "payroll_history": []
+  },
+  {    
+    "id": "MOX-204",
+    "name": "Alice Johnson",
+    "division": "Human Resources",
+    "role": "HR Manager",
+    "salary": "40.000",
+    "payroll_history": []
+  },
+  {    
+    "id": "MOX-205",
+    "name": "Bob Brown",
+    "division": "Finance",
+    "role": "Financial Analyst",
+    "salary": "50.000",
+    "payroll_history": []
+
+  },
+  {    
+    "id": "MOX-206",
+    "name": "Charlie White",
+    "division": "IT Support",
+    "role": "IT Support Specialist",
+    "salary": "70.000",
+    "payroll_history": []
+  },
+  {    
+    "id": "MOX-207",
+    "name": "Diana Green",
+    "division": "Customer Service",
+    "role": "Customer Service Representative",
+    "salary": "90.000",
+    "payroll_history": []
+  },
+  {    
+    "id": "MOX-208",
+    "name": "Ethan Blue",
+    "division": "Product Management",
+    "role": "Product Manager",
+    "salary": "10.000",
+    "payroll_history": []
+  },
+  {
+    "id": "MOX-209",
+    "name": "Fiona Yellow",
+    "division": "Legal",
+    "role": "Legal Counsel",
+    "salary": "15.000",
+    "payroll_history": []
+  },
+  {
+    "id": "MOX-210",
+    "name": "George Purple",
+    "division": "Operations",
+    "role": "Operations Manager",
+    "salary": "20.000",
+    "payroll_history": []
+  },
+  {
+    "id": "MOX-211",
+    "name": "Hannah Orange",
+    "division": "Research and Development",
+    "role": "R&D Scientist",
+    "salary": "23.000",
+    "payroll_history": []
+  },
+  {
+    "id": "MOX-212",
+    "name": "Ian Pink",
+    "division": "Quality Assurance",
+    "role": "QA Engineer",
+    "salary": "100.000",
+    "payroll_history": []
+  },
+  {
+    "id": "MOX-213",
+    "name": "Jack Gray",
+    "division": "Supply Chain",
+    "role": "Supply Chain Coordinator",
+    "salary": "22.000",
+    "payroll_history": []
+  },
+  {
+    "id": "MOX-214",
+    "name": "Kathy Brown",
+    "division": "Training and Development",
+    "role": "Training Specialist",
+    "salary": "220.000",
+    "payroll_history": []
+  },
+  {
+    "id": "MOX-215",
+    "name": "Liam Black",
+    "division": "Public Relations",
+    "role": "PR Specialist",
+    "salary": "27.000",
+    "payroll_history": []
+  },
+  {
+    "id": "MOX-216",
+    "name": "Mia Silver",
+    "division": "Content Creation",
+    "role": "Content Writer",
+    "salary": "5.000",
+    "payroll_history": []
+  },
+  {
+    "id": "MOX-217",
+    "name": "Noah Gold",
+    "division": "Data Analysis",
+    "role": "Data Analyst",
+    "salary": "7.000",
+    "payroll_history": []
+  },
+  {
+    "id": "MOX-218",
+    "name": "Olivia Teal",
+    "division": "Graphic Design",
+    "role": "Graphic Designer",
+    "salary": "12.000",
+    "payroll_history": []
+  },
+  {
+    "id": "MOX-219",
+    "name": "Paul Maroon",
+    "division": "Web Development",
+    "role": "Web Developer",
+    "salary": "10.000",
+    "payroll_history": []
+  },
+  {
+    "id": "MOX-220",
+    "name": "Quinn Cyan",
+    "division": "Event Management",
+    "role": "Event Coordinator",
+    "salary": "17.000",
+    "payroll_history": []
+  }
+]}

@@ -1,0 +1,37 @@
+[
+  {
+    "title": "Organic Green Tea",
+    "description": "A refreshing blend of organic green tea leaves sourced from sustainable farms.",
+    "stock": 150,
+    "image": "https://example.com/images/green-tea.jpg",
+    "price": 4.99
+  },
+  {
+    "title": "Bluetooth Wireless Earbuds",
+    "description": "Noise-cancelling, sweat-resistant earbuds with long battery life.",
+    "stock": 80,
+    "image": "https://example.com/images/earbuds.jpg",
+    "price": 29.99
+  },
+  {
+    "title": "Ceramic Coffee Mug",
+    "description": "12oz ceramic mug with a smooth finish, perfect for coffee or tea.",
+    "stock": 200,
+    "image": "https://example.com/images/mug.jpg",
+    "price": 7.50
+  },
+  {
+    "title": "Yoga Mat",
+    "description": "Non-slip yoga mat made from eco-friendly materials.",
+    "stock": 50,
+    "image": "https://example.com/images/yoga-mat.jpg",
+    "price": 19.99
+  },
+  {
+    "title": "LED Desk Lamp",
+    "description": "Adjustable LED lamp with 3 brightness settings and USB charging port.",
+    "stock": 120,
+    "image": "https://example.com/images/desk-lamp.jpg",
+    "price": 15.75
+  }
+]
