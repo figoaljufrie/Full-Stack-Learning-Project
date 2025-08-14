@@ -7,7 +7,7 @@ export function handleError(
   error?: unknown
 ) {
   return res.status(statusCode).json({
-    success: false,
+    status: false,
     message,
     error
   })

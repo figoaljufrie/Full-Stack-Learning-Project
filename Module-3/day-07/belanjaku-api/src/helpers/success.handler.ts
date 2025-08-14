@@ -7,7 +7,7 @@ export function handleSuccess(
   statusCode: number = 200
 ) {
   return res.status(statusCode).json({
-    success: true,
+    status: true,
     message,
     data
   })
