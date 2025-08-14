@@ -35,7 +35,6 @@ export default function Project() {
 
   const isModalOpen = activeIndex !== null
 
-  // Normalize all photo sets to the same shape
   const currentPhotos: NormalizedPhoto[] =
     selectedCategory === 'design3d'
       ? photos.map(p => ({ src: p.imageUrl }))
@@ -60,28 +59,28 @@ export default function Project() {
   if (loading || loading2 || loading3 || loading4) return <p>Loading Photos...</p>
 
   return (
-    <section className="w-full h-[100vh] relative overflow-hidden">
-      {/* Letters */}
+    <section className="w-full min-h-screen relative overflow-hidden px-2 sm:px-4 md:px-8">
+      {/* Floating Letters */}
       {letters.map((item, idx) => (
         <span
           key={idx}
-          className={`absolute text-white text-[18.5vw] font-extrabold z-10 animate-float-bounce ${item.style}`}
+          className={`absolute text-white text-[50vw] sm:text-[25vw] md:text-[30vw] lg:text-[20vw] font-extrabold z-10 animate-float-bounce ${item.style}`}
           style={{ animationDelay: `${idx * 0.4}s` }}
         >
           {item.char}
         </span>
       ))}
 
-      {activeIndex !== null && (
+      {isModalOpen && (
         <div className="fixed inset-0 bg-black/60 backdrop-blur-sm z-40 transition-opacity duration-300"></div>
       )}
 
       {/* CATEGORY CARDS */}
       {[
-        { data: photos, cat: 'design3d', pos: 'top-[0%] left-[3%]', label: '3D DESIGN', keyProp: 'imageUrl' },
-        { data: photos2, cat: 'marcomms', pos: 'top-[50%] left-[15%]', label: 'MARCOMMS', keyProp: 'imageUrl2' },
-        { data: photos3, cat: 'creative', pos: 'top-[15%] left-[50%]', label: 'CREATIVE', keyProp: 'imageUrl3' },
-        { data: photos4, cat: 'passionproject', pos: 'top-[45%] left-[60%]', label: 'PASSION PROJECT', keyProp: 'imageUrl4' },
+        { data: photos, cat: 'design3d', pos: 'top-[5%] left-[15%] lg:top-[5%] lg:left-[3%] md:top-[0%] md:left-[2%]', label: '3D DESIGN', keyProp: 'imageUrl' },
+        { data: photos2, cat: 'marcomms', pos: 'top-[55%] left-[15%] lg:top-[45%] lg:left-[20%] md:top-[20%] md:left-[20%] ', label: 'MARCOMMS', keyProp: 'imageUrl2' },
+        { data: photos3, cat: 'creative', pos: 'top-[30%] left-[15%] lg:top-[5%] lg:left-[40%] md:top-[40%] md:left-[40%] ', label: 'CREATIVE', keyProp: 'imageUrl3' },
+        { data: photos4, cat: 'passionproject', pos: 'top-[80%] left-[15%] lg:top-[45%] lg:left-[60%] md:top-[60%] md:left-[60%]', label: 'PASSION PROJECT', keyProp: 'imageUrl4' },
       ].map(({ data, cat, pos, label, keyProp }, idx) =>
         data.filter((_, i) => i === 0).map((item, i) => {
           const imgSrc = (item as unknown as { [key: string]: string })[keyProp]
@@ -92,7 +91,7 @@ export default function Project() {
                 setSelectedCategory(cat as Category)
                 setActiveIndex(i)
               }}
-              className={`absolute ${pos} z-${(idx + 1) * 10} z-20 w-[30vw] h-[12vw] hover:scale-105 transition-all duration-500 ease-in-out bg-white/10 backdrop-blur-md rounded-xl flex items-center justify-center cursor-pointer`}
+              className={`absolute ${pos} z-${(idx + 1) * 10} z-20 w-[70vw] h-[30vw] lg:w-[30vw] lg:h-[20vw] md:w-[35vw] md:h-[20vw] hover:scale-105 transition-all duration-500 ease-in-out bg-white/10 backdrop-blur-md rounded-xl flex items-center justify-center cursor-pointer`}
             >
               <Image
                 src={imgSrc}
@@ -100,7 +99,7 @@ export default function Project() {
                 fill
                 className="object-cover rounded-xl opacity-35"
               />
-              <h1 className="absolute text-white text-5xl font-bold text-center pointer-events-none">
+              <h1 className="absolute text-white text-lg sm:text-2xl md:text-5xl font-bold text-center pointer-events-none">
                 {label}
               </h1>
             </div>
@@ -110,7 +109,7 @@ export default function Project() {
 
       {/* Modal Viewer */}
       {isModalOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm">
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm p-4">
           <button
             onClick={() => setActiveIndex(null)}
             className="absolute top-4 right-4 text-white text-2xl"
@@ -142,7 +141,7 @@ export default function Project() {
               alt={`Enlarged project ${activeIndex}`}
               width={1200}
               height={800}
-              className="max-w-[90vw] max-h-[90vh] object-contain rounded-xl shadow-lg transition-all duration-300"
+              className="max-w-[95vw] max-h-[80vh] object-contain rounded-xl shadow-lg transition-all duration-300"
             />
           )}
         </div>
