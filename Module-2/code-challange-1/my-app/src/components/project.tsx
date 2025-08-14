@@ -1,6 +1,7 @@
 'use client'
 
 import React, { useState } from 'react'
+import Image from 'next/image'
 import { useProjectPhotos } from '@/helpers/usePhotos/useProjectPhotos'
 import { useProjectPhotos2 } from '@/helpers/usePhotos/useProjectPhotos2'
 import { useProjectPhotos3 } from '@/helpers/usePhotos/useProjectPhotos3'
@@ -19,6 +20,10 @@ const letters = [
 
 type Category = 'design3d' | 'marcomms' | 'creative' | 'passionproject'
 
+interface NormalizedPhoto {
+  src: string
+}
+
 export default function Project() {
   const [activeIndex, setActiveIndex] = useState<number | null>(null)
   const [selectedCategory, setSelectedCategory] = useState<Category>('design3d')
@@ -30,16 +35,15 @@ export default function Project() {
 
   const isModalOpen = activeIndex !== null
 
-  const currentPhotos: any[] =
+  // Normalize all photo sets to the same shape
+  const currentPhotos: NormalizedPhoto[] =
     selectedCategory === 'design3d'
-      ? photos
+      ? photos.map(p => ({ src: p.imageUrl }))
       : selectedCategory === 'marcomms'
-      ? photos2
+      ? photos2.map(p => ({ src: p.imageUrl2 }))
       : selectedCategory === 'creative'
-      ? photos3
-      : selectedCategory === 'passionproject'
-      ? photos4
-      : []
+      ? photos3.map(p => ({ src: p.imageUrl3 }))
+      : photos4.map(p => ({ src: p.imageUrl4 }))
 
   const showPrev = () => {
     if (activeIndex !== null && activeIndex > 0) {
@@ -72,97 +76,37 @@ export default function Project() {
         <div className="fixed inset-0 bg-black/60 backdrop-blur-sm z-40 transition-opacity duration-300"></div>
       )}
 
-      {/* CATEGORY: 3D DESIGN */}
-      {photos
-        .filter((_, idx) => idx === 0)
-        .map((item, idx) => (
-          <div
-            key={idx}
-            onClick={() => {
-              setSelectedCategory('design3d')
-              setActiveIndex(idx)
-            }}
-            className={`absolute top-[0%] left-[3%] z-10 w-[30vw] h-[12vw] hover:scale-105 transition-all duration-500 ease-in-out bg-white/10 backdrop-blur-md rounded-xl flex items-center justify-center cursor-pointer`}
-          >
-            <img
-              src={item.imageUrl}
-              alt={`project ${idx}`}
-              className="object-cover w-full h-full rounded-xl opacity-35"
-            />
-            <h1 className="absolute text-white text-4xl font-bold text-center pointer-events-none">
-              3D DESIGN
-            </h1>
-          </div>
-        ))}
-
-      {/* CATEGORY: MARCOMMS */}
-      {photos2
-        .filter((_, idx) => idx === 0)
-        .map((item, idx) => (
-          <div
-            key={idx}
-            onClick={() => {
-              setSelectedCategory('marcomms')
-              setActiveIndex(idx)
-            }}
-            className="absolute top-[50%] left-[15%] z-20 w-[30vw] h-[12vw] hover:scale-105 transition-all duration-500 ease-in-out bg-white/10 backdrop-blur-md rounded-xl flex items-center justify-center cursor-pointer"
-          >
-            <img
-              src={item.imageUrl2}
-              alt={`MARKETING COMMUNICATIONS ${idx}`}
-              className="object-cover w-full h-full rounded-xl opacity-35"
-            />
-            <h1 className="absolute text-white text-4xl font-bold text-center pointer-events-none">
-              MARCOMMS
-            </h1>
-          </div>
-        ))}
-
-      {/* CATEGORY: CREATIVE */}
-      {photos3
-        .filter((_, idx) => idx === 0)
-        .map((item, idx) => (
-          <div
-            key={idx}
-            onClick={() => {
-              setSelectedCategory('creative')
-              setActiveIndex(idx)
-            }}
-            className="absolute top-[15%] left-[50%] z-30 w-[30vw] h-[12vw] hover:scale-105 transition-all duration-500 ease-in-out bg-white/10 backdrop-blur-md rounded-xl flex items-center justify-center cursor-pointer"
-          >
-            <img
-              src={item.imageUrl3}
-              alt={`CREATIVE ${idx}`}
-              className="object-cover w-full h-full rounded-xl opacity-35"
-            />
-            <h1 className="absolute text-white text-4xl font-bold text-center pointer-events-none">
-              CREATIVE
-            </h1>
-          </div>
-        ))}
-
-      {/* CATEGORY: PASSIONPROJECT */}
-      {photos4
-        .filter((_, idx) => idx === 0)
-        .map((item, idx) => (
-          <div
-            key={idx}
-            onClick={() => {
-              setSelectedCategory('passionproject')
-              setActiveIndex(idx)
-            }}
-            className="absolute top-[45%] left-[60%] z-40 w-[30vw] h-[12vw] hover:scale-105 transition-all duration-500 ease-in-out bg-white/10 backdrop-blur-md rounded-xl flex items-center justify-center cursor-pointer"
-          >
-            <img
-              src={item.imageUrl4}
-              alt={`PASSION PROJECT ${idx}`}
-              className="object-cover w-full h-full rounded-xl opacity-35"
-            />
-            <h1 className="absolute text-white text-4xl font-bold text-center pointer-events-none">
-              PASSION PROJECT
-            </h1>
-          </div>
-        ))}
+      {/* CATEGORY CARDS */}
+      {[
+        { data: photos, cat: 'design3d', pos: 'top-[0%] left-[3%]', label: '3D DESIGN', keyProp: 'imageUrl' },
+        { data: photos2, cat: 'marcomms', pos: 'top-[50%] left-[15%]', label: 'MARCOMMS', keyProp: 'imageUrl2' },
+        { data: photos3, cat: 'creative', pos: 'top-[15%] left-[50%]', label: 'CREATIVE', keyProp: 'imageUrl3' },
+        { data: photos4, cat: 'passionproject', pos: 'top-[45%] left-[60%]', label: 'PASSION PROJECT', keyProp: 'imageUrl4' },
+      ].map(({ data, cat, pos, label, keyProp }, idx) =>
+        data.filter((_, i) => i === 0).map((item, i) => {
+          const imgSrc = (item as unknown as { [key: string]: string })[keyProp]
+          return (
+            <div
+              key={`${idx}-${i}`}
+              onClick={() => {
+                setSelectedCategory(cat as Category)
+                setActiveIndex(i)
+              }}
+              className={`absolute ${pos} z-${(idx + 1) * 10} z-20 w-[30vw] h-[12vw] hover:scale-105 transition-all duration-500 ease-in-out bg-white/10 backdrop-blur-md rounded-xl flex items-center justify-center cursor-pointer`}
+            >
+              <Image
+                src={imgSrc}
+                alt={`${label} ${i}`}
+                fill
+                className="object-cover rounded-xl opacity-35"
+              />
+              <h1 className="absolute text-white text-5xl font-bold text-center pointer-events-none">
+                {label}
+              </h1>
+            </div>
+          )
+        })
+      )}
 
       {/* Modal Viewer */}
       {isModalOpen && (
@@ -192,19 +136,15 @@ export default function Project() {
             </button>
           )}
 
-          <img
-            src={
-              selectedCategory === 'design3d'
-                ? photos[activeIndex!].imageUrl
-                : selectedCategory === 'marcomms'
-                ? photos2[activeIndex!].imageUrl2
-                : selectedCategory === 'creative'
-                ? photos3[activeIndex!].imageUrl3
-                : photos4[activeIndex!].imageUrl4
-            }
-            alt={`Enlarged project ${activeIndex}`}
-            className="max-w-[90vw] max-h-[90vh] object-contain rounded-xl shadow-lg transition-all duration-300"
-          />
+          {activeIndex !== null && (
+            <Image
+              src={currentPhotos[activeIndex].src}
+              alt={`Enlarged project ${activeIndex}`}
+              width={1200}
+              height={800}
+              className="max-w-[90vw] max-h-[90vh] object-contain rounded-xl shadow-lg transition-all duration-300"
+            />
+          )}
         </div>
       )}
     </section>

@@ -60,7 +60,8 @@ export default function Experience() {
 
   return (
     <section className="pt-0 px-10 pb-5 min-h-screen">
-      {/* Toggle Button */}
+      {/* 
+      // --- HIDE ADD BUTTON ---
       <div className="mb-6">
         <button
           onClick={() => setShowForm((prev) => !prev)}
@@ -69,8 +70,10 @@ export default function Experience() {
           {showForm ? "Cancel" : "+"}
         </button>
       </div>
+      */}
 
-      {/* Add Form */}
+      {/* 
+      // --- HIDE ADD EXPERIENCE FORM ---
       {showForm && (
         <div className="bg-white p-6 rounded-xl shadow-md mb-10 w-full md:w-[70%] lg:w-[50%]">
           <div className="grid grid-cols-1 gap-4">
@@ -136,6 +139,7 @@ export default function Experience() {
           </div>
         </div>
       )}
+      */}
 
       {/* Experience Grids */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
