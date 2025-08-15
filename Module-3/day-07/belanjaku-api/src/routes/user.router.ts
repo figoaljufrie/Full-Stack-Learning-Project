@@ -2,11 +2,22 @@ import { Router } from "express";
 import { UserController } from "../controllers/user.controller";
 import { AuthMiddleware } from "../middleware/auth.middleware";
 
-const userRouter = Router()
-const userController = new UserController()
-const authMiddleware = new AuthMiddleware()
+export class UserRouter {
+  private router = Router();
+  private userController = new UserController();
+  private authMiddleware = new AuthMiddleware();
 
-userRouter.post('/auth/register', userController.create)
-userRouter.post('/login', userController.login)
-userRouter.get('/users',  authMiddleware.authenticate, userController.getAll)
-export default userRouter
+  constructor() {
+    this.initializeRoutes();
+  }
+
+  private initializeRoutes() {
+    this.router.post("/auth/register", this.userController.create);
+    this.router.post("/login", this.userController.login);
+    this.router.get("/users", this.authMiddleware.authenticate, this.userController.getAll);
+  }
+
+  public getRouter() {
+    return this.router;
+  }
+}
